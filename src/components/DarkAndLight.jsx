@@ -1,0 +1,53 @@
+import { Moon, Sun } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { cn } from "../lib/utils";
+/**
+ * DarkAndLight component toggles between dark and light mode icons.
+ * It uses Lucide icons for the moon and sun.
+ */
+
+export const DarkAndLight = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme == "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
+    }
+  };
+
+  return (
+    /* This button toggles the theme between dark and light mode
+     * It uses tailwind merge for class name merging.
+     */
+    <button
+      onClick={toggleTheme}
+      className={cn(
+        "fixed max-sm:hidden top-4 right-5 z-50 p-2 rounded-full transition-colors duration-300",
+        "focus:outline-hidden"
+      )}
+    >
+      {isDarkMode ? (
+        <Sun className="h-5 w-5 text-yellow-300" />
+      ) : (
+        <Moon className="h-5 w-5 text-gray-800" />
+      )}
+    </button>
+  );
+};
