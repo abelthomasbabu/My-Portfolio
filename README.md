@@ -1,12 +1,50 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website with this application I aim to showcases my projects I have created so far alongside pursing my computer science degree and also offer a glimpse of me as a person :) 
 
-Currently, two official plugins are available:
+## Run Locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone the project
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* [Node.js](https://nodejs.org/)
+* [Git](https://git-scm.com/)
+
+### Clone and Run
+
+```bash
+git clone https://github.com/yourusername/react-tailwind-portfolio.git
+cd react-tailwind-portfolio
+npm install
+npm run dev
+```
+
+Your app will be available at: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## Lessons Learned
+
+This project helped me refresh and polish my frontend skills and introduced me to toast notifications. 
+
+## Tech Stack
+
+* **React** – Component-based UI development
+* **Vite** – Lightning-fast build tool
+* **TailwindCSS** – Utility-first CSS for styling
+* **Lucide Icons** – Clean and beautiful icon pack
+* **Radix UI** – Accessible component primitives
+* **GitHub & Vercel** – Deployment
+
+---
+
+## Roadmap
+
+- Setup email client
+
+- Update Projects
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
