@@ -36,14 +36,9 @@ This project helped me refresh and polish my frontend skills and introduced me t
 * **Lucide Icons** – Clean and beautiful icon pack
 * **Radix UI** – Accessible component primitives
 * **GitHub & Vercel** – Deployment
+* **EmailJS** - Email service.
 
 ---
-
-## Roadmap
-
-- Setup email client
-
-- Update Projects
 
 ## License
 
