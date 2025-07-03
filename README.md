@@ -14,7 +14,7 @@ Clone the project
 ### Clone and Run
 
 ```bash
-git clone https://github.com/yourusername/My-Portfolio.git
+git clone https://github.com/abelthomasbabu/My-Portfolio.git
 cd My-Portfolio
 npm install
 npm run dev
