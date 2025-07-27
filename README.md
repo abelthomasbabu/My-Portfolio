@@ -6,7 +6,7 @@ Welcome to my personal portfolio website with this application I aim to showcase
 
 Clone the project
 
-### Prerequisites
+### Prerequisitess
 
 * [Node.js](https://nodejs.org/)
 * [Git](https://git-scm.com/)
