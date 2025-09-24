@@ -31,15 +31,17 @@ const projects = [
     tags: ["Full-Stack", "Flask", "React", "SQL"],
     githubUrl: "https://github.com/abelthomasbabu/contact-manager-app",
   },
-  {
-    id: 4,
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website showcasing my projects, skills, and experience. Built with React and Tailwind CSS for a modern and responsive design.",
-    image: "/projects/portfolio.png",
-    tags: ["React", "Tailwind CSS", "JavaScript"],
-    githubUrl: "https://github.com/abelthomasbabu/My-Portfolio",
-  },
+  /**
+   * {
+   *   id: 4,
+   *   title: "Portfolio Website",
+   *   description:
+   *     "A personal portfolio website showcasing my projects, skills, and experience. Built with React and Tailwind CSS for a modern and responsive design.",
+   *   image: "/projects/portfolio.png",
+   *   tags: ["React", "Tailwind CSS", "JavaScript"],
+   *   githubUrl: "https://github.com/abelthomasbabu/My-Portfolio",
+   * },
+   */
 ];
 
 export const ProjectSection = () => {
