@@ -66,7 +66,7 @@ export const experience = [
     location: "Kerala, India",
     stack: "Swift · UIKit",
     bullets: [
-      "Built core screens and reusable components for a logistics iOS app, integrated with REST APIs with asynchronous Swift.",
+      "Built core screens and reusable components for a logistics iOS app, wired to REST APIs using asynchronous Swift.",
       "Fixed a list-rendering inefficiency, improving scrolling performance by about 35%.",
     ],
   },

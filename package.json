@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
     "@radix-ui/react-toast": "^1.2.14",
     "@radix-ui/themes": "^3.2.1",
     "@tailwindcss/vite": "^4.1.8",
