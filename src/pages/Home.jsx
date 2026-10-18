@@ -1,37 +1,19 @@
-import { DarkAndLight } from "../components/DarkAndLight";
-import { Navbar } from "../components/Navbar";
-import { StarBackground } from "../components/StarBackground";
-import { HeroSection } from "../components/HeroSection";
-import { AboutSection } from "../components/AboutSection";
-import { ProjectSection } from "../components/ProjectSection";
-import { SkillsSection } from "../components/SkillsSection";
-import { ContactSection } from "../components/ContactSection";
+import { Intro } from "../components/Intro";
+import { Projects } from "../components/Projects";
+import { Experience } from "../components/Experience";
+import { Skills } from "../components/Skills";
+import { Education } from "../components/Education";
 import { Footer } from "../components/Footer";
-import { Contact } from "lucide-react";
 
-export const Home = () => {
-  return (
-    <div className="min-h-screen bg-background text-foreground overflow-hidden">
-      {/* Theme Toggle */}
-      <DarkAndLight />
-
-      {/* Background Effects */}
-      <StarBackground />
-
-      {/* Navbar */}
-      <Navbar />
-
-      {/* Main Content */}
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectSection />
-        <ContactSection />
-      </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
-  );
-};
+export const Home = () => (
+  <div className="mx-auto max-w-[760px] px-4 py-16 sm:py-24">
+    <Intro />
+    <main>
+      <Projects />
+      <Experience />
+      <Skills />
+      <Education />
+    </main>
+    <Footer />
+  </div>
+);

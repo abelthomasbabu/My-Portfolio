@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Welcome to my personal portfolio website with this application I aim to showcases my projects I have created so far alongside pursing my computer science degree and also offer a glimpse of me as a person :) 
+Personal site of Abel Thomas Babu: AI engineer working on LLMs and RAG, on a Python backend foundation. All copy lives in `src/data/content.js`.
 
 ## Run Locally
 
@@ -24,19 +24,22 @@ Your app will be available at: [http://localhost:5173](http://localhost:5173)
 
 ---
 
-## Lessons Learned
+## Commands
 
-This project helped me refresh and polish my frontend skills and introduced me to toast notifications. 
+```bash
+npm test        # content and component tests (Vitest)
+npm run lint
+npm run build
+```
 
 ## Tech Stack
 
-* **React** – Component-based UI development
-* **Vite** – Lightning-fast build tool
-* **TailwindCSS** – Utility-first CSS for styling
-* **Lucide Icons** – Clean and beautiful icon pack
-* **Radix UI** – Accessible component primitives
-* **GitHub & Vercel** – Deployment
-* **EmailJS** - Email service.
+* **React** + **Vite**
+* **Tailwind CSS** v4
+* **Geist** and **Geist Mono** fonts
+* **Lucide** icons
+* **Vitest** + Testing Library
+* **Vercel** for deployment
 
 ---
 
