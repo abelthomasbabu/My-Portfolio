@@ -21,7 +21,7 @@ export const Intro = () => (
           key={label}
           href={href}
           {...(href.startsWith("https://") && { target: "_blank", rel: "noreferrer" })}
-          className="underline decoration-line transition-colors hover:text-accent hover:decoration-accent"
+          className="underline decoration-muted/50 transition-colors hover:text-accent hover:decoration-accent"
         >
           {label}
         </a>

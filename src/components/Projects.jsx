@@ -23,7 +23,7 @@ export const Projects = () => (
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-0.5 underline decoration-line transition-colors hover:text-accent hover:decoration-accent"
+                  className="inline-flex items-center gap-0.5 underline decoration-muted/50 transition-colors hover:text-accent hover:decoration-accent"
                 >
                   {label}
                   <ArrowUpRight size={14} aria-hidden="true" />
