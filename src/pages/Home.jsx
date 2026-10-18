@@ -6,7 +6,7 @@ import { Education } from "../components/Education";
 import { Footer } from "../components/Footer";
 
 export const Home = () => (
-  <div className="mx-auto max-w-[680px] px-4 py-16 sm:py-24">
+  <div className="mx-auto max-w-[760px] px-4 py-16 sm:py-24">
     <Intro />
     <main>
       <Projects />

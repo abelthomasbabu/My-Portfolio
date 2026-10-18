@@ -1,35 +1,44 @@
 @import "tailwindcss" source("../src");
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/geist-mono";
+@import "@fontsource/silkscreen";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --font-pixel: "Silkscreen", ui-monospace, monospace;
 
   --color-bg: var(--bg);
+  --color-panel: var(--panel);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-amber: var(--amber);
 }
 
+/* Light: warm paper. Dark: night desk. Same sprites on both. */
 :root {
-  --bg: #fbfbfa;
-  --fg: #18181b;
-  --muted: #63636b;
-  --line: #e4e4e2;
-  --accent: #0f766e;
+  --bg: #f4efe6;
+  --panel: #fbf8f2;
+  --fg: #22201c;
+  --muted: #6b645a;
+  --line: #22201c;
+  --accent: #15803d;
+  --amber: #b45309;
   color-scheme: light;
 }
 
 .dark {
-  --bg: #0e0e10;
-  --fg: #ececee;
-  --muted: #9a9aa3;
-  --line: #26262b;
-  --accent: #5eead4;
+  --bg: #111312;
+  --panel: #171a18;
+  --fg: #e8ece4;
+  --muted: #8f998f;
+  --line: #2f3830;
+  --accent: #86efac;
+  --amber: #fbbf24;
   color-scheme: dark;
 }
 
@@ -42,11 +51,34 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 a {
   text-underline-offset: 3px;
+}
+
+/* Hard-edged "pixel" panel: solid border and an unblurred offset shadow. */
+.pixel-panel {
+  background: var(--panel);
+  border: 2px solid var(--line);
+  box-shadow: 4px 4px 0 var(--line);
+  transition: transform 120ms steps(2), box-shadow 120ms steps(2);
+}
+
+.pixel-panel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+@keyframes pixel-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.pixel-blink {
+  animation: pixel-blink 1s steps(1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

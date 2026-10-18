@@ -36,3 +36,9 @@ describe("content", () => {
     expect(experience[0].company).toBe("Nezuna Technologies");
   });
 });
+
+describe("profile copy", () => {
+  it("has no 'currently' line", () => {
+    expect(profile).not.toHaveProperty("currently");
+  });
+});

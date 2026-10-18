@@ -75,3 +75,18 @@ source of truth for all content.
 - Case-study pages for the RAG assistant and the RL agent.
 - New Open Graph preview image.
 - LinkedIn rewrite (drafted after the site copy is final).
+
+## Revision (18 Oct): workbench + pixel art
+
+Abel found the minimal version too plain. The visual layer changes; content, tests and
+structure stay.
+
+- Dark "night desk" theme (#111312, green #86efac and amber #fbbf24 accents) and a light
+  "warm paper" theme (#f4efe6); both still follow the system setting.
+- Pixel art drawn as SVG from character maps in `src/data/sprites.js`: a desk scene in the
+  hero (blinking cursor, still under reduced motion) and one icon per project.
+- Silkscreen pixel font only for the name, small labels and section headings; body text
+  and metrics stay in Geist / Geist Mono.
+- Hard-edged panels (2px border, unblurred offset shadow) for project cards and links;
+  skills shown as an "inventory" of chips.
+- Column widened to 760px. The "Currently" line is removed.
