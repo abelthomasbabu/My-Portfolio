@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { profile, projects, experience } from "./content";
+import { profile, projects, experience, skills } from "./content";
 
 const allLinks = [...profile.links, ...projects.flatMap((p) => p.links)];
 
@@ -40,5 +40,14 @@ describe("content", () => {
 describe("profile copy", () => {
   it("has no 'currently' line", () => {
     expect(profile).not.toHaveProperty("currently");
+  });
+});
+
+describe("skills", () => {
+  it("lists every language from the resume, plus Spring Boot from LinkedIn", () => {
+    const all = skills.flatMap((s) => s.items);
+    for (const s of ["Python", "Java", "JavaScript", "TypeScript", "C#", "Swift", "SQL", "Spring Boot"]) {
+      expect(all).toContain(s);
+    }
   });
 });

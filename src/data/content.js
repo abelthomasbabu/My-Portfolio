@@ -75,9 +75,10 @@ export const experience = [
 ];
 
 export const skills = [
+  { group: "Languages", items: ["Python", "Java", "JavaScript", "TypeScript", "C#", "Swift", "SQL"] },
   { group: "AI / ML", items: ["PyTorch", "OpenCV", "scikit-learn", "LangChain"] },
-  { group: "Backend", items: ["Python", "FastAPI", "Flask", "C# / .NET", "PostgreSQL", "REST APIs"] },
-  { group: "Frontend / Mobile", items: ["React", "TypeScript", "Tailwind CSS", "Flutter", "Swift"] },
+  { group: "Backend", items: ["FastAPI", "Flask", "Spring Boot", ".NET", "PostgreSQL", "REST APIs"] },
+  { group: "Frontend / Mobile", items: ["React", "Tailwind CSS", "Flutter", "UIKit"] },
   { group: "Tools", items: ["Git", "GitHub Actions", "Docker", "Kubernetes"] },
 ];
 
