@@ -5,8 +5,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export const Intro = () => (
   <header>
-    <div className="flex items-center justify-between">
-      <p className="font-pixel text-xs uppercase text-accent">Player 1 · {profile.location}</p>
+    <div className="flex justify-end">
       <ThemeToggle />
     </div>
 
