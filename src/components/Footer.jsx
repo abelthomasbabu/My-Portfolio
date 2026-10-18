@@ -8,8 +8,8 @@ export const Footer = () => (
     >
       {profile.email}
     </a>
-    <span className="font-pixel text-xs uppercase">
-      Game saved · {new Date().getFullYear()}
+    <span className="font-mono text-xs">
+      {profile.location} · {new Date().getFullYear()}
     </span>
   </footer>
 );
