@@ -30,4 +30,8 @@ export default [
       ],
     },
   },
+  {
+    files: ['vite.config.js', '**/*.test.{js,jsx}'],
+    languageOptions: { globals: globals.node },
+  },
 ]
