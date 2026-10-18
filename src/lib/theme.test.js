@@ -19,7 +19,15 @@ describe("theme storage", () => {
   it("round-trips a stored theme and ignores unknown values", () => {
     setStoredTheme("dark");
     expect(getStoredTheme()).toBe("dark");
-    localStorage.setItem("theme", "purple");
+    localStorage.setItem("theme-v1", "purple");
+    expect(getStoredTheme()).toBeNull();
+  });
+});
+
+describe("theme storage key", () => {
+  it("ignores the old site's 'theme' key so returning visitors follow the system", () => {
+    localStorage.clear();
+    localStorage.setItem("theme", "dark");
     expect(getStoredTheme()).toBeNull();
   });
 });

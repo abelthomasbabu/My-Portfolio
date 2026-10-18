@@ -19,8 +19,9 @@
       // Apply the theme before first paint so there is no flash of the wrong one.
       (function () {
         var stored = null;
-        try { stored = localStorage.getItem("theme"); } catch (e) {}
-        var dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        try { stored = localStorage.getItem("theme-v1"); } catch (e) {}
+        // Same rule as getStoredTheme in src/lib/theme.js: unknown values follow the system.
+        var dark = stored === "dark" || (stored !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
         if (dark) document.documentElement.classList.add("dark");
       })();
     </script>

@@ -1,5 +1,5 @@
 // Theme choice is a per-viewer convenience: storage may be blocked, so never throw.
-const KEY = "theme";
+const KEY = "theme-v1"; // new key: the old site stored "theme" for every visitor
 
 export function getStoredTheme() {
   try {
