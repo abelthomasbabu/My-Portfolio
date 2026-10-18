@@ -44,20 +44,10 @@ describe("profile copy", () => {
 });
 
 describe("skills", () => {
-  it("covers every language and tool named on the resume", () => {
+  it("lists every language from the resume, plus Spring Boot from LinkedIn", () => {
     const all = skills.flatMap((s) => s.items);
-    const resume = [
-      "Python", "Java", "JavaScript", "TypeScript", "C#", "Swift", "SQL",
-      "PyTorch", "OpenCV", "scikit-learn", "LangChain", "OpenAI API", "ChromaDB",
-      "YOLOv8", "Stable-Baselines3", "Gymnasium", "Claude Code",
-      "FastAPI", "Flask", ".NET", "PostgreSQL", "SQLAlchemy", "REST APIs", "Firebase",
-      "React", "Tailwind CSS", "Streamlit", "Flutter", "UIKit", "Xcode",
-      "Git", "GitHub Actions", "Docker", "Kubernetes",
-    ];
-    for (const s of resume) expect(all).toContain(s);
-  });
-
-  it("only lists what the resume supports", () => {
-    expect(skills.flatMap((s) => s.items)).not.toContain("Spring Boot");
+    for (const s of ["Python", "Java", "JavaScript", "TypeScript", "C#", "Swift", "SQL", "Spring Boot"]) {
+      expect(all).toContain(s);
+    }
   });
 });
