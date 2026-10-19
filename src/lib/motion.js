@@ -15,27 +15,3 @@ export function useReducedMotion() {
 
   return reduced;
 }
-
-// True once `ref` has scrolled into view (and stays true).
-export function useInView(ref) {
-  const [seen, setSeen] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || seen) return;
-    if (!("IntersectionObserver" in window)) {
-      setSeen(true);
-      return;
-    }
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setSeen(true);
-        observer.disconnect();
-      }
-    });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [ref, seen]);
-
-  return seen;
-}
