@@ -53,13 +53,6 @@ export const projects = [
   },
 ];
 
-// Hero stats: each one is restated from the projects, education or experience below.
-export const stats = [
-  { counter: { from: 0, to: 0.94, decimals: 2 }, label: "RAG faithfulness" },
-  { counter: { from: 67, to: 9, suffix: " ms" }, label: "RL inference, was 64–67 ms" },
-  { value: "MSc", label: "Distinction, Newcastle" },
-];
-
 export const sections = [
   { id: "work", label: "Work" },
   { id: "experience", label: "Experience" },

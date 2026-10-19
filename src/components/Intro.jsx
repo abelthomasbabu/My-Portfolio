@@ -1,7 +1,6 @@
 import { ArrowDownToLine, ArrowUpRight, Mail } from "lucide-react";
-import { profile, stats } from "@/data/content";
+import { profile } from "@/data/content";
 import { sprites } from "@/data/sprites";
-import { PixelCounter } from "./PixelCounter";
 import { PixelField } from "./PixelField";
 import { PixelSprite } from "./PixelSprite";
 
@@ -68,16 +67,5 @@ export const Intro = () => (
         />
       </div>
     </div>
-
-    <dl className="reveal grid grid-cols-3 border-2 border-line bg-surface shadow-[4px_4px_0_var(--line)]">
-      {stats.map(({ value, counter, label }, i) => (
-        <div key={label} className={`flex flex-col-reverse gap-1 px-3 py-4 sm:px-6 sm:py-5 ${i ? "border-l-2 border-line" : ""}`}>
-          <dt className="text-xs leading-snug text-muted sm:text-sm">{label}</dt>
-          <dd className="font-pixel text-xl text-accent sm:text-3xl">
-            {counter ? <PixelCounter {...counter} /> : value}
-          </dd>
-        </div>
-      ))}
-    </dl>
   </div>
 );
