@@ -2,6 +2,7 @@
 
 export const profile = {
   name: "Abel Thomas Babu",
+  role: "AI Engineer",
   tagline: "AI engineer working on LLMs and RAG, on a Python backend foundation.",
   context: "Software Engineer at Nezuna · MSc Advanced Computer Science (Distinction), Newcastle",
   email: "abelthomasbabu@gmail.com",
@@ -18,6 +19,7 @@ export const projects = [
   {
     title: "AI Papers RAG Assistant",
     icon: "rag",
+    highlight: { value: "0.94", label: "RAGAS faithfulness" },
     summary:
       "Question answering over a custom document with hybrid dense + BM25 retrieval, enforced source citations and a Streamlit chat that shows the retrieved chunks.",
     metric: "0.94 faithfulness · 0.94 context recall (RAGAS)",
@@ -27,6 +29,7 @@ export const projects = [
   {
     title: "Vision-based RL agent for game automation",
     icon: "agent",
+    highlight: { value: "9 ms", label: "inference, down from 64–67 ms" },
     summary:
       "YOLOv8s object detection feeding a Deep Q-Network in a custom Gymnasium environment, with no game-specific logic. MSc dissertation.",
     metric: "Inference 64–67 ms → 9–14.5 ms · 0.994 mAP@0.5 · 3 games, no retraining",
@@ -41,12 +44,27 @@ export const projects = [
   {
     title: "Hydra flood prediction system",
     icon: "hydra",
+    highlight: { value: "IoT", label: "real-time flood alerts" },
     summary:
       "IoT early-warning system: water-level and temperature/humidity sensors streaming to Firebase, with a logistic regression model classifying flood risk. Four-person team project.",
     metric: "Real-time sensor data → flood / no-flood alerts",
     stack: ["Arduino", "ESP8266", "Firebase", "scikit-learn"],
     links: [],
   },
+];
+
+// Hero stats: each one is restated from the projects, education or experience below.
+export const stats = [
+  { counter: { from: 0, to: 0.94, decimals: 2 }, label: "RAG faithfulness" },
+  { counter: { from: 67, to: 9, suffix: " ms" }, label: "RL inference, was 64–67 ms" },
+  { value: "MSc", label: "Distinction, Newcastle" },
+];
+
+export const sections = [
+  { id: "work", label: "Work" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
 ];
 
 export const experience = [

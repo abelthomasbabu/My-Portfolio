@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { sprites } from "@/data/sprites";
 import { applyTheme, setStoredTheme } from "@/lib/theme";
+import { PixelSprite } from "./PixelSprite";
 
 export const ThemeToggle = () => {
   // index.html sets the class before first paint; read it back as the source of truth.
@@ -20,9 +21,9 @@ export const ThemeToggle = () => {
       type="button"
       onClick={toggle}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      className="rounded-md p-2 text-muted transition-colors hover:text-fg"
+      className="grid size-11 cursor-pointer place-items-center border-2 border-transparent transition-colors duration-100 hover:border-line"
     >
-      {isDark ? <Sun size={16} /> : <Moon size={16} />}
+      <PixelSprite frames={isDark ? sprites.sun : sprites.moon} scale={3} />
     </button>
   );
 };
