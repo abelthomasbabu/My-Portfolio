@@ -1,74 +1,138 @@
 @import "tailwindcss" source("../src");
-@import "@fontsource-variable/geist";
-@import "@fontsource-variable/geist-mono";
 @import "@fontsource/silkscreen";
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/geist-mono";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
   --font-pixel: "Silkscreen", ui-monospace, monospace;
+  --font-sans: "DM Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
 
   --color-bg: var(--bg);
-  --color-panel: var(--panel);
+  --color-surface: var(--surface);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
   --color-amber: var(--amber);
 }
 
-/* Light: warm paper. Dark: night desk. Same sprites on both. */
+/* Light: warm paper. Dark: night desk. Text pairs meet 4.5:1. */
 :root {
   --bg: #f4efe6;
-  --panel: #fbf8f2;
+  --surface: #fbf8f2;
   --fg: #22201c;
-  --muted: #6b645a;
+  --muted: #5f584f;
   --line: #22201c;
   --accent: #15803d;
-  --amber: #b45309;
+  --on-accent: #fbf8f2;
+  --amber: #a14a07;
+  --field: rgba(34, 32, 28, 0.045);
   color-scheme: light;
 }
 
 .dark {
-  --bg: #111312;
-  --panel: #171a18;
+  --bg: #0f1110;
+  --surface: #161a17;
   --fg: #e8ece4;
-  --muted: #8f998f;
-  --line: #2f3830;
+  --muted: #9aa49a;
+  --line: #34403a;
   --accent: #86efac;
+  --on-accent: #0f1110;
   --amber: #fbbf24;
+  --field: rgba(232, 236, 228, 0.035);
   color-scheme: dark;
+}
+
+html {
+  overflow-x: clip; /* the hero backdrop is full-bleed (100vw includes the scrollbar) */
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 30%, transparent);
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 a {
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Sections land below the sticky header when jumped to. */
+section[id] {
+  scroll-margin-top: 5.5rem;
 }
 
 /* Hard-edged "pixel" panel: solid border and an unblurred offset shadow. */
 .pixel-panel {
-  background: var(--panel);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  box-shadow: 4px 4px 0 var(--line);
+  transition: transform 120ms steps(2), box-shadow 120ms steps(2), border-color 120ms steps(2);
+}
+
+a.pixel-panel:hover,
+.pixel-panel.is-hoverable:hover,
+.pixel-panel.is-hoverable:focus-within {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+a.pixel-panel:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--line);
+}
+
+/* Pressed-in primary button. */
+.pixel-button {
+  background: var(--accent);
+  color: var(--on-accent);
   border: 2px solid var(--line);
   box-shadow: 4px 4px 0 var(--line);
   transition: transform 120ms steps(2), box-shadow 120ms steps(2);
 }
 
-.pixel-panel:hover {
+.pixel-button:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--accent);
+  box-shadow: 6px 6px 0 var(--line);
+}
+
+.pixel-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--line);
+}
+
+/* Dithered rule: a checkerboard of 2px pixels. */
+.dither {
+  height: 4px;
+  background-image:
+    linear-gradient(45deg, var(--line) 25%, transparent 25%, transparent 75%, var(--line) 75%),
+    linear-gradient(45deg, var(--line) 25%, transparent 25%, transparent 75%, var(--line) 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+  opacity: 0.6;
+}
+
+/* Fade the hero's pixel field out towards the edges. */
+.pixel-field {
+  mask-image: radial-gradient(ellipse 80% 75% at 50% 45%, #000 40%, transparent 85%);
 }
 
 @keyframes pixel-blink {
@@ -81,7 +145,27 @@ a {
   animation: pixel-blink 1s steps(1) infinite;
 }
 
+/* Scroll reveal in chunky 8-bit steps. Only hidden when JS marked it and motion is welcome. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 360ms steps(4),
+      transform 360ms steps(4);
+  }
+
+  .reveal-ready .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
